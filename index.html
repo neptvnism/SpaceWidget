@@ -61,18 +61,18 @@
 
         .planet {
             position: absolute;
-            font-size: 4em; /* Larger planets */
-            animation: wiggle 5s ease-in-out infinite;
+            font-size: 3em; /* Larger planets */
+            animation: spin 10s linear infinite;
         }
 
         .planet1 {
-            top: 20%;
-            left: 15%;
+            top: 10%;
+            left: 10%;
         }
 
         .planet2 {
-            top: 40%;
-            left: 60%;
+            top: 20%;
+            left: 70%;
         }
 
         .planet3 {
@@ -81,8 +81,8 @@
         }
 
         .planet4 {
-            top: 30%;
-            left: 75%;
+            top: 70%;
+            left: 80%;
         }
 
         .earth {
@@ -96,46 +96,18 @@
 
         .shooting-star {
             position: absolute;
-            top: 10%;
-            left: -10%;
+            top: -10%;
+            right: 10%;
             font-size: 1.5em;
             animation: shootStar 3s linear infinite;
         }
 
         .comet {
             position: absolute;
-            top: 30%;
-            left: 10%;
+            top: -10%;
+            right: -10%;
             font-size: 2em;
-            animation: shootComet 3s linear infinite;
-        }
-
-        .telescop {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 4em; /* Very large telescope */
-        }
-
-        @keyframes wiggle {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            50% { transform: translate(-50%, -50%) rotate(10deg); }
-            100% { transform: translate(-50%, -50%) rotate(0deg); }
-        }
-
-        @keyframes spinEarth {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        @keyframes shootStar {
-            0% { left: -10%; top: 10%; opacity: 1; }
-            100% { left: 120%; top: 50%; opacity: 0; }
-        }
-
-        @keyframes shootComet {
-            0% { left: 10%; top: 30%; opacity: 1; }
-            100% { left: 120%; top: 60%; opacity: 0; }
+            animation: shootComet 5s linear infinite;
         }
 
         .sparkles {
@@ -145,7 +117,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            font-size: 1.5em;
+            font-size: 2em;
         }
 
         .sparkles::before {
@@ -155,10 +127,24 @@
             animation: sparkle 10s infinite;
         }
 
-        @keyframes sparkle {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spinEarth {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shootStar {
+            0% { left: 100%; top: 0%; opacity: 1; }
+            100% { left: 0%; top: 100%; opacity: 0; }
+        }
+
+        @keyframes shootComet {
+            0% { left: 100%; top: -10%; opacity: 1; }
+            100% { left: -10%; top: 100%; opacity: 0; }
         }
 
     </style>
@@ -169,13 +155,12 @@
             <div class="planets">
                 <div class="planet planet1">🪐</div>
                 <div class="planet planet2">🌕</div>
-                <div class="planet planet3">🌟</div>
-                <div class="planet planet4">🌞 </div>
+                <div class="planet planet3">🌍</div>
+                <div class="planet planet4">🌏</div>
                 <div class="earth">🌎</div>
                 <div class="shooting-star">⭐️</div>
                 <div class="comet">☄️</div>
                 <div class="sparkles"></div>
-                <div class="telescop">🔭</div>
             </div>
         </div>
     </div>
